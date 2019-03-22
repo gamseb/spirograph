@@ -28,7 +28,9 @@ def draw():
     # draw rest of points
 
     #for i in range(0,360 * (r//gcdVal) + 1, 5):   
-    for i in range(0,foo, 5):
+    i = 0
+    while True:
+
         #coordinates = ""
         a = math.radians(i)
         x = R*((1-k)*math.cos(a) + l*k*math.cos((1-k)*a/k))
@@ -42,6 +44,7 @@ def draw():
         #    coordinates = a
         #if a != coordinates:
         t.setpos(xc + x, yc + y)
+        i += 5
     # done - hide turtle
     t.hideturtle()
     turtle.mainloop()
