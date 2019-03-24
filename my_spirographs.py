@@ -7,8 +7,9 @@ from PIL import Image
 from datetime import datetime    
 from fractions import gcd
 
-width, height = 100, 100
-R = int(random.randint(50, min(width, height)//2))
+width, height = 400, 400
+#R = int(random.randint(500, min(width, height)//2))
+R = 200
 r = int(random.randint(10, 9*R//10))
 l = random.uniform(0.1, 0.9)
 k = random.uniform(0.1, 0.9)
@@ -29,13 +30,16 @@ def draw():
 
     #for i in range(0,360 * (r//gcdVal) + 1, 5):   
     i = 0
+    t.hideturtle()
+    t.color(col)
     while True:
 
+        
         #coordinates = ""
         a = math.radians(i)
         x = R*((1-k)*math.cos(a) + l*k*math.cos((1-k)*a/k))
         y = R*((1-k)*math.sin(a) - l*k*math.sin((1-k)*a/k))
-        print(i," / ",  str(360 * eee + 5))
+        #print(i," / ",  str(360 * eee + 5))
         if i == 0:
             t.up()
         else:
@@ -44,9 +48,9 @@ def draw():
         #    coordinates = a
         #if a != coordinates:
         t.setpos(xc + x, yc + y)
-        i += 5
+        i += 1000
     # done - hide turtle
-    t.hideturtle()
+    
     turtle.mainloop()
 
     i = 0
